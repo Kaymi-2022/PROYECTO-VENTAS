@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*.navegacionheader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}*/
+.navegacionheader{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 2fr);
+    gap: 40px;
+}
+.boton {
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    height: 60px;
+    background: #00ff99;
+    color: white;
+    font-family: "Roboto Light";
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: bold;
+    overflow: hidden;
+}
+.boton span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+
+}
+.container video{
+    width: 100%;
+    height: 100%;
+}
+
