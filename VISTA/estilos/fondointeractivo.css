@@ -1,0 +1,61 @@
+.sliderfondos {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-position: center center;
+    background-image: url(../IMAGENES/imagenesfondo/animado.jpg);
+    z-index: -1;
+}
+
+.sliderfondos li {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    animation: sliderfondos 40s linear infinite;
+}
+
+.sliderfondos .imag1 {
+    width: 100%;
+    position: absolute;
+    background-image: url(../IMAGENES/imagenesfondo/animado1.jpg);
+    animation-delay: 10s;
+    z-index: -1;
+}
+
+.sliderfondos .imag2 {
+    position: absolute;
+    background-image: url(../IMAGENES/imagenesfondo/animado2.jpg);
+    animation-delay: 20s;
+    z-index: -1;
+}
+
+.sliderfondos .imag3 {
+    position: absolute;
+    background-image: url(../IMAGENES/imagenesfondo/animado3.jpg);
+    animation-delay: 30s;
+    z-index: -1;
+}
+
+@keyframes sliderfondos {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 0;
+    }
+}

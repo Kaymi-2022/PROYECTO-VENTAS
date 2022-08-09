@@ -1,11 +1,12 @@
-let cerrar = document.querySelectorAll(".close")[0];
-let abrir = document.querySelectorAll(".hamburger")[0];
-let modal = document.querySelectorAll(".modal-close")[0];
-let modalC = document.querySelectorAll(".contenedor-modal")[0];
+function changeStyle() {
+    document.querySelector(".contenedor-modal").style.visibility = "visible";
+    document.querySelector(".contenedor-modal").style.opacity = "1";
+    document.querySelector(".modal-navegacontenedor").style.transform="translateY(0%)";
+}
 
-abrir.addEventListener("click", function (e){
-    e.preventDefault();
-    modalC.style.visibility="visible";
-    modalC.style.opacity="1";
-    modal.style.translateY="0%";
-})
+function cerrarVentana() {
+    document.querySelector(".contenedor-modal").style.visibility = "hidden";
+    document.querySelector(".contenedor-modal").style.opacity = "0";
+    document.querySelector(".modal-navegacontenedor").style.transform="translateY(-200%)";
+}
+

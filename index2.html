@@ -7,104 +7,110 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/12f3bc59b2.js" crossorigin="anonymous"></script>
     <script src="VISTA/JAVASCRIPT/modal.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./VISTA/estilos/styles.css">
-    <link rel="stylesheet" href="./VISTA/estilos/hamburgers.css">
-    <link rel="stylesheet" href="./VISTA/estilos/estiloHeader.css">
+    <link rel="stylesheet" href="VISTA/estilos/maquetacionGrid.css">
+    <link rel="stylesheet" href="VISTA/estilos/estilos.css">
+    <link rel="stylesheet" href="./VISTA/estilos/fondointeractivo.css">
     <title>MAQUETACION</title>
 </head>
 <body>
-<div class="contenedor">
-    <header class="header">
-        <h1>HELLOPET</h1>
-    </header>
-    <nav class="navegacionBoton">
-        <button class="hamburger hamburger--emphatic" type="button">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-        </button>
-    </nav>
-
-    <div id="nav" class="contenedor-modal">
-        <div class="modal-navegacontenedor">
-            <p class="close"> X </p>
-            <button type="button" class="boton menu">
-                <span>INICIO</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="mision()" class="boton menu">
-                <span>MISION</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="vision()" class="boton menu">
-                <span>VISION</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="nosotros()" class="boton menu">
-                <span>NOSOTROS</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="producto()" class="boton menu">
-                <span>PRODUCTO</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="contacto()" class="boton menu">
-                <span>CONTACTO</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-            <button type="button" onclick="equipo()" class="boton menu">
-                <span>EQUIPO</span>
-                <div class="icono">
-                    <i class="fa-solid fa-dog"></i>
-                </div>
-            </button>
-        </div>
-    </div>
-
-
-    <div class="widget-1">
-        <h3>widget1</h3>
-    </div>
-    <div class="widget-2">
-        <h3>widget2</h3>
-    </div>
-    <div class="widget-3">
-        <h3>widget3</h3>
-    </div>
-    <div class="widget-4">
-        <h3>widget4</h3>
-    </div>
-    <div class="widget-5">
-        <h3>widget5</h3>
-    </div>
-    <div class="widget-6">
-        <h3>widget6</h3>
-    </div>
-    <footer class="footer">
-
-    </footer>
+<header class="header">
+    <h1>EMPRESA YARA</h1>
+    <img src="./VISTA/IMAGENES/logo.jfif">
+</header>
+<nav class="navegacionBoton">
+    <button class="redes"><i class="fa-brands fa-square-facebook"></i></button>
+    <button class="redes"><i class="fa-brands fa-twitter"></i></button>
+    <button class="redes"><i class="fa-brands fa-whatsapp"></i></button>
+    <button class="redes"><i class="fa-solid fa-user"></i></button>
+    <button class="redes" onclick="changeStyle()"><i class="fa-solid fa-bars"></i></button>
+</nav>
+<div class="contenedorimagenesanimadas">
+    <ul class="sliderfondos">
+        <li class="imag1"></li>
+        <li class="imag2"></li>
+        <li class="imag3"></li>
+    </ul>
 </div>
-<script>
-    // Look for .hamburger
-    var hamburger = document.querySelector(".hamburger");
-    // On click
-    hamburger.addEventListener("click", function () {
-        // Toggle class "is-active"
-        hamburger.classList.toggle("is-active");
-        // Do something else, like open/close menu
-    });
-</script>
+<div id="nav" class="contenedor-modal">
+    <div class="modal-navegacontenedor">
+        <button class="close" onclick="cerrarVentana()"> X</button>
+        <button type="button" class="boton menu">
+            <span>INICIO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="mision()" class="boton menu">
+            <span>MISION</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="vision()" class="boton menu">
+            <span>VISION</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="nosotros()" class="boton menu">
+            <span>NOSOTROS</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="producto()" class="boton menu">
+            <span>PRODUCTO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="contacto()" class="boton menu">
+            <span>CONTACTO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="equipo()" class="boton menu">
+            <span>EQUIPO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+    </div>
+</div>
+
+
+<div class="widget-1">
+    <h3>widget1</h3>
+</div>
+<div class="widget-2">
+    <h3>widget2</h3>
+</div>
+<div class="widget-3">
+    <h3>widget3</h3>
+</div>
+<div class="widget-4">
+    <h3>widget4</h3>
+</div>
+<div class="widget-5">
+    <h3>widget5</h3>
+</div>
+<div class="widget-6">
+    <h3>widget6</h3>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="contenedorFooter"><i class="fa-solid fa-map-location"></i> DIRECCION LOS OLIVOS URB.VILLA UNIVERSITARIA</div>
+    <div class="contenedorFooter"><i class="fa-solid fa-phone"></i>+51 902756120</div>
+    <div class="contenedorFooter"><i class="fa-solid fa-envelope-circle-check"></i> kaymilyg@gmail.com</div>
+    <div class="contenedorFooter">YARA PRODUCCIONES</div>
+    <div class="contenedorFooter">Calidad e innovacion son nuestro principal objetivo</div>
+    <div class="contenedorFooter-redes">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+</footer>
 </body>
 </html>

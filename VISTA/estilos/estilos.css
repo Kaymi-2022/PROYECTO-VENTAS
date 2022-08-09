@@ -1,10 +1,44 @@
+
+.navegacionBoton{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+.header{
+    color: aqua;
+    font-family: "Roboto Light", serif;
+    font-size: medium;
+    font-weight: bold;
+}
+.redes{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    cursor: pointer;
+}
+.header img{
+    border: medium solid greenyellow;
+    height: 30%;
+}
+.widget-1{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
 .contenedor-modal{
     opacity: 0;
     visibility: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 99%;
+    height: 1000px;
     background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    display: flex;
 }
 .modal-navegacontenedor{
     display: flex;
@@ -12,26 +46,24 @@
     justify-content: space-between;
     background-color: white;
     text-align: center;
-    padding: 5%;
+    padding: 2%;
     top: 10%;
     left: 35%;
     position: absolute;
-    width: 30%;
-    height: 50%;
+    width: 25%;
+    height: 40%;
     transition: transform 4s;
-    transform: translateY(0%);
-    border-radius: 20px;
-    z-index: 3;
-    background-color: rgba(0, 0, 0, 0.5);
-
-}
-.modal-close{
     transform: translateY(-200%);
+    border-radius: 20px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid greenyellow;
+
 }
 .close{
     position: absolute;
     top: 0;
-    left: 90%;
+    left: 100%;
     background-color: red;
     padding: 15px;
     color: black;
@@ -76,7 +108,7 @@
 }
 
 .boton {
-    display: inline-flex;
+    display: flex;
     width: 100%;
     height: 60px;
     background-color: #00ff99;
@@ -99,3 +131,25 @@
     transition: .3s ease all;
 }
 
+.footer{
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    font-family: "Roboto Light", serif;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,auto);
+    align-items: center;
+    padding-left: 20px;
+}
+.contenedorFooter-redes{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    cursor: pointer;
+}
+.footer hr{
+    grid-column: 1/span 4;
+    align-items: center;
+}

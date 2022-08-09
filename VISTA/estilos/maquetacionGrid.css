@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 99%;
+    height: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 50px 300px 300px 200px 150px);
+    /*background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);*/
+    grid-template-areas: "header header header header nav nav"
+                        "widget-1  widget-1 widget-1 widget-1 widget-1 widget-1"
+                        "widget-2  widget-2 widget-2 widget-3 widget-3 widget-3"
+                        "widget-4  widget-4 widget-5 widget-5 widget-6 widget-6"
+                        "footer    footer footer footer footer footer ";
+}
+
+.contenedorimagenesanimadas {
+    border: medium solid black;
+    grid-column: 1/span 6;
+    grid-row: 2/span 3;
+}
+
+.header {
+    grid-area: header;
+    position: fixed;
+}
+
+.navegacionBoton {
+    grid-area: nav;
+    background-color: black;
+}
+
+.widget-1 {
+    border: 2px solid black;
+    grid-area: widget-1;
+}
+
+.widget-2 {
+    border: 2px solid black;
+    grid-area: widget-2;
+}
+
+.widget-3 {
+    border: 2px solid black;
+    grid-area: widget-3;
+}
+
+.widget-4 {
+    border: 2px solid black;
+    grid-area: widget-4;
+}
+
+.widget-5 {
+    border: 2px solid black;
+    grid-area: widget-5;
+}
+
+.widget-6 {
+    border: 2px solid black;
+    grid-area: widget-6;
+}
+
+.footer {
+    border: 2px solid black;
+    grid-area: footer;
+}
+
+
