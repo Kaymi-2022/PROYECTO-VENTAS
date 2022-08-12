@@ -1,16 +1,21 @@
 
-.navegacionBoton{
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    align-items: center;
-    text-align: center;
-}
 .header{
-    color: aqua;
+    color: black;
     font-family: "Roboto Light", serif;
     font-size: medium;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+/*    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;*/
+}
+.navegacionBoton{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: black;
 }
 .redes{
     width: 100%;
@@ -22,6 +27,13 @@
 .header img{
     border: medium solid greenyellow;
     height: 30%;
+}
+.contenedor-carrito{
+    font-size: 40px;
+    text-decoration: none;
+    background-color: black;
+    color: greenyellow;
+    cursor: pointer;
 }
 .widget-1{
     width: 100%;

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/12f3bc59b2.js" crossorigin="anonymous"></script>
+    <script src="VISTA/JAVASCRIPT/modal.js" crossorigin="anonymous"></script>
+    <script src="VISTA/JAVASCRIPT/modal2.js" crossorigin="anonymous"></script>
+    <title>PROYECTO YARA</title>
+</head>
+
+<style>
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .estilo-header-footer {
+        background-color: black;
+    }
+
+    .estilo-header-footer img {
+        width: 150px;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navegacionBoton {
+        width: 400px;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .redes {
+        font-size: 40px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        /*flex-grow: 1;*/
+    }
+
+    main {
+        color: black;
+        flex-grow: 2;
+    }
+
+    .hero-image {
+        background-image: url("https://placeimg.com/1920/1080/animals");
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        color: white;
+    }
+
+    .hero-image div {
+        display: flex;
+        min-height: inherit;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+    }
+    footer{
+        /*border: medium solid red;*/
+        height: 150px;
+        color: white;
+        font-size: 20px;
+        font-family: "Roboto Light", serif;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,auto);
+        padding-left: 20px;
+        align-content: space-evenly;
+    }
+    .contenedorFooter-redes{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        cursor: pointer;
+    }
+    .footer hr{
+        grid-column: 1/span 2;
+        background-color: white;
+    }
+    /*ESTILOS DE MENU DINAMICO*/
+    .contenedor-modal{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        display: flex;
+    }
+    .modal-navegacontenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        text-align: center;
+        padding: 2%;
+        top: 10%;
+        left: 37%;
+        position: absolute;
+        width: 25%;
+        height: 40%;
+        transition: transform 4s;
+        transform: translateY(-200%);
+        border-radius: 20px;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 3px solid greenyellow;
+
+    }
+    .close{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: red;
+        padding: 15px;
+        color: black;
+        border-radius: 50%;
+        line-height: 10px;
+        cursor: pointer;
+    }
+  /*  ESTILOS DE LOS BOTONES DE MENU DE NAVEGACION*/
+    .boton.menu span {
+        transition: .4s ease-in-out all;
+        position: absolute;
+        left: 40%;
+    }
+
+    .boton.menu .icono {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 2;
+        left: -40px;
+        transition: .3s ease-in-out all;
+        opacity: 0;
+    }
+
+    .boton.menu svg {
+        color: black;
+        width: 30px;
+        height: 30px;
+    }
+
+    .boton.menu:hover {
+        background: white;
+    }
+
+    .boton.menu:hover .icono {
+        left: calc(100% - 50px);
+        opacity: 1;
+        color: black;
+    }
+
+    .boton.menu:hover span {
+        left: 20px;
+    }
+
+    .boton {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        background-color: #00ff99;
+        color: black;
+        font-family: "Roboto Light", serif;
+        font-size: medium;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: .3s ease all;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    .boton span{
+        position: relative;
+        z-index: 2;
+        transition: .3s ease all;
+    }
+    .contenedor-login{
+        color: white;
+        font-size: medium;
+/*        display: flex;*/
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 100%;
+        z-index: 900;
+        transition: transform 4s;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .contenedor-login img{
+        width: 100px;
+        color: white;
+        background-color: white;
+        position: absolute;
+        top: -80px;
+        border-radius: 80px;
+    }
+    .contenedor-login form{
+        min-width: 20%;
+        height: 400px;
+        background-color: black;
+        border-radius: 15px;
+        border: medium solid greenyellow;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1rem;
+        transform: translateY(0%);
+    }
+    .contenedor-login input{
+        background-color: transparent;
+        border-bottom: white;
+        color: white;
+    }
+    .contenedor-login a{
+        color: inherit;
+    }
+    .contenedor-login input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 30px;
+        background: red;
+        color: #fff;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .close{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: red;
+        padding: 10px;
+        color: black;
+        border-radius: 50%;
+        line-height: 10px;
+        cursor: pointer;
+    }
+    .logo{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        background-color: black;
+    }
+</style>
+<body>
+<header class="estilo-header-footer">
+    <div class="logo">
+        <img src="./VISTA/IMAGENES/logo.jfif" alt="">
+        <button class="redes" ><i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+    <nav class="navegacionBoton">
+        <button class="redes" ><i class="fa-brands fa-square-facebook"></i></button>
+        <button class="redes"><i class="fa-brands fa-twitter"></i></button>
+        <button class="redes"><i class="fa-brands fa-whatsapp"></i></button>
+        <button class="redes" onclick="abrirLogin()"><i class="fa-solid fa-user"></i></button>
+        <button class="redes" onclick="changeStyle()"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+</header>
+<main>
+    <section class="hero-image">
+        <div>
+            <h2>YARA PRODUCCIONES</h2>
+        </div>
+    </section>
+</main>
+<!--MENU DE NAVEGACION -->
+<div id="nav" class="contenedor-modal">
+    <div class="modal-navegacontenedor">
+        <button class="close" onclick="cerrarVentana()"> X</button>
+        <button type="button" class="boton menu">
+            <span>INICIO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="mision()" class="boton menu">
+            <span>MISION</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="vision()" class="boton menu">
+            <span>VISION</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="nosotros()" class="boton menu">
+            <span>NOSOTROS</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="producto()" class="boton menu">
+            <span>PRODUCTO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="contacto()" class="boton menu">
+            <span>CONTACTO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+        <button type="button" onclick="equipo()" class="boton menu">
+            <span>EQUIPO</span>
+            <div class="icono">
+                <i class="fa-solid fa-dog"></i>
+            </div>
+        </button>
+    </div>
+</div>
+
+<div>
+    <section class="contenedor-login">
+        <form >
+            <button class="close" onclick="cerrarLogin()"> X</button>
+            <img src="./VISTA/IMAGENES/avatar.png" class="avatar" alt="Avatar Image">
+            <h1>Login Here</h1>
+            <!--username-->
+            <label for="username">Username</label>
+            <input type="text" >
+            <!-- PASSWORD INPUT -->
+            <label for="password">Password</label>
+            <input type="password" >
+            <input type="submit" value="Log In">
+            <a href="#">Lost your Password?</a><br>
+            <a href="#">Don't have An account?</a>
+        </form>
+    </section>
+</div>
+<footer class="estilo-header-footer">
+    <div class="contenedorFooter"><i class="fa-solid fa-map-location"></i> DIRECCION LOS OLIVOS URB.VILLA UNIVERSITARIA</div>
+    <div class="contenedorFooter"><i class="fa-solid fa-phone"></i>+51 902756120</div>
+    <div class="contenedorFooter"><i class="fa-solid fa-envelope-circle-check"></i> kaymilyg@gmail.com</div>
+    <div class="contenedorFooter">YARA PRODUCCIONES</div>
+    <div class="contenedorFooter">Calidad e innovacion son nuestro principal objetivo</div>
+    <div class="contenedorFooter-redes">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+</footer>
+</body>
+</html>
