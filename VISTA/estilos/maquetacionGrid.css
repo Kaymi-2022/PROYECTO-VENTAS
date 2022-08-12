@@ -11,7 +11,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 50px 300px 300px 200px 150px);
     /*background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);*/
-    grid-template-areas: "header header header header nav nav"
+    grid-template-areas: "header cart . . nav nav"
                         "widget-1  widget-1 widget-1 widget-1 widget-1 widget-1"
                         "widget-2  widget-2 widget-2 widget-3 widget-3 widget-3"
                         "widget-4  widget-4 widget-5 widget-5 widget-6 widget-6"
@@ -25,8 +25,13 @@ body {
 }
 
 .header {
+    display: flex;
     grid-area: header;
     position: fixed;
+}
+.cart{
+    grid-area: cart;
+    text-align: center;
 }
 
 .navegacionBoton {
